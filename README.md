@@ -1,11 +1,11 @@
+** MelodyVerse Web Application **
 Its a Full Stack MERN login-signup page 
-#MelodyVerse Web Application
 forntend: localhost: 3000
 backend: localhost: 8080
-#Project Overview
+**Project Overview**
 MelodyVerse is a full-stack MERN (MongoDB, Express, React, Node.js) web application featuring user authentication with signup, login, and home pages. The backend is powered by Node.js with MongoDB, and the frontend is built using React. The application includes features like password visibility toggle, email notifications, and JWT-based authentication.
 
-#Features
+**Features**
 #Authentication:
 Users are redirected to the login page by default.
 If not registered, users are redirected to the signup page.
