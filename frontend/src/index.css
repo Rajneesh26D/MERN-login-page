@@ -1,0 +1,151 @@
+
+*,
+::before,
+::after{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+label{
+  font-size: 20px;
+}
+
+html,
+body{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  background-color: #FFF;
+  padding: 32px 48px;
+  border-radius: 10px;
+  width: 100%;
+  /* max-width: 400px; */
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.container > h1{
+  margin-bottom: 20px;
+}
+
+.container > form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 85%;
+}
+.container div{
+  display: flex;
+  flex-direction: column;
+}
+
+.container input{
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.container input::placeholder{
+  font-size: 12px;
+  font-style: italic;
+}
+
+button{
+  background-color: purple;
+  border: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/* Styles for the container */
+.password-container {
+  position: relative; /* Parent element to position the eye icon */
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the password input field */
+.password-input {
+  width: 100%;
+  padding-right: 35px; /* Make space for the icon on the right */
+}
+
+/* Style for the eye icon */
+.eye_icon {
+  position: absolute;
+  right: 5px; /* Position the icon to the right inside the input field */
+  top: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #c77bbf;
+}
+
+.terms-container {
+  position: relative; /* Parent element to position the eye icon */
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+
+#checkbox {
+  position: absolute;
+  left: 50px;
+  top: 3px;
+}
+
+.check-box-label {
+  font-size: 14px;          /* Adjust font size as needed */
+  color: rgb(72, 66, 72);            /* Change color if desired */
+}
+
+.remember-me {
+  position: relative;
+  display: flex;
+  /* align-items:flex-start; */
+  /* gap: 8px; */
+  /* margin-bottom: 15px; */
+  /* justify-content: space-between; */
+}
+
+.remember-me input[type="checkbox"] {
+  position: absolute;
+  left: -130px;
+  top: 3px;
+}
+
+.remember-me label {
+  /* position: absolute; */
+  font-size: 18px;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.terms {
+  position: relative;
+  display: flex;
+  /* align-items:flex-start; */
+  /* gap: 8px; */
+  /* margin-bottom: 15px; */
+  /* justify-content: space-between; */
+}
+
+.terms input[type="checkbox"] {
+  position: absolute;
+  left: -20px;
+  top: 3px;
+}
