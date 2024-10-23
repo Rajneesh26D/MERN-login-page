@@ -1,0 +1,118 @@
+/* Container styles */
+.home-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Gradient Overlay */
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+/* MelodyVerse title */
+.home-title {
+    color: white;
+    font-size: 80px;
+    padding: 5px;
+    margin: auto;
+    z-index: 2;
+    animation: fadeIn 2s;
+}
+
+/* Welcome Box */
+.welcome-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: pink;
+    border-width: 5px;
+    border-style: solid;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    animation: slideIn 1.5s ease-out;
+}
+
+/* Welcome message */
+.welcome-message {
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+/* Logout Button */
+.logout-button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.5);
+}
+
+.logout-button:hover {
+    background: linear-gradient(45deg, #f06595, #ff6b6b);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 50px;
+    }
+    
+    .welcome-box {
+        padding: 15px;
+    }
+
+    .logout-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-title {
+        font-size: 40px;
+    }
+
+    .welcome-box {
+        padding: 10px;
+    }
+
+    .logout-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

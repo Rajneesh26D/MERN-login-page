@@ -1,112 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { handleSuccess } from '../utils';
-import { ToastContainer } from 'react-toastify';
-import melodyverse from '../assets/images/concert-5471823_1280.jpg';
+import { handleSuccess } from '../utils'; // Utility function to show success messages
+import { ToastContainer } from 'react-toastify'; // Toast notifications
+import melodyverse from '../assets/images/concert-5471823_1280.jpg'; // Background image for the home page
+import './Home.css'; // Import CSS for styling
 
 function Home() {
-    const [loggedInUser, setLoggedInUser] = useState('');
-    const navigate = useNavigate();
-    
+    const [loggedInUser, setLoggedInUser] = useState(''); // State to store the currently logged-in user
+    const navigate = useNavigate(); // Hook for navigating between routes
+
+    // Retrieve the logged-in user from localStorage when the component mounts
     useEffect(() => {
         setLoggedInUser(localStorage.getItem('loggedInUser'));
     }, []);
 
+    // Handle the logout process
     const handleLogout = (e) => {
+        // Remove the token and logged-in user info from localStorage
         localStorage.removeItem('token');
         localStorage.removeItem('loggedInUser');
-        handleSuccess('User Logged out');
+        handleSuccess('User Logged out'); // Show success message
+        // Redirect to the login page after a short delay
         setTimeout(() => {
             navigate('/login');
         }, 1000);
     };
 
     return (
-        <div style={{
-            position: 'relative',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundImage: `url(${melodyverse})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: '100vh',
-            width: '100vw',
-            overflow: 'hidden'
-        }}>
-            {/* Gradient Overlay */}
-            <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
-                zIndex: 1
-            }}></div>
+        <div
+            className="home-container" // Container for the home page
+            style={{
+                backgroundImage: `url(${melodyverse})`, // Set background image
+            }}
+        >
+            <div className="gradient-overlay"></div> {/* Overlay for visual effect */}
 
-            <h1 style={{
-                color: 'white',
-                fontSize: '80px',
-                padding: '5px',
-                margin: 'auto',
-                zIndex: 2,
-                animation: 'fadeIn 2s'
-            }}>MelodyVerse</h1>
+            <h1 className="home-title">MelodyVerse</h1> {/* Title of the application */}
 
-            <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: 'auto',
-                backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                borderColor: 'pink',
-                borderWidth: '5px',
-                borderStyle: 'solid',
-                color: 'white',
-                padding: '20px',
-                borderRadius: '15px',
-                boxShadow: '0 8px 16px rgba(0, 0, 0, 0.5)',
-                zIndex: 2,
-                animation: 'slideIn 1.5s ease-out'
-            }}>
-                <h1 style={{
-                    padding: '5px',
-                    marginBottom: '20px'
-                }}>Welcome {loggedInUser}</h1>
-                
-                <button onClick={handleLogout} style={{
-                    padding: '10px 20px',
-                    background: 'linear-gradient(45deg, #ff6b6b, #f06595)',
-                    border: 'none',
-                    borderRadius: '30px',
-                    color: 'white',
-                    fontSize: '16px',
-                    cursor: 'pointer',
-                    transition: 'background 0.3s ease',
-                    boxShadow: '0 4px 12px rgba(255, 107, 107, 0.5)'
-                }} 
-                onMouseOver={(e) => e.target.style.background = 'linear-gradient(45deg, #f06595, #ff6b6b)'}
-                onMouseOut={(e) => e.target.style.background = 'linear-gradient(45deg, #ff6b6b, #f06595)'}>
+            <div className="welcome-box"> {/* Box to display welcome message and logout button */}
+                <h1 className="welcome-message">Welcome {loggedInUser}</h1> {/* Display logged-in user */}
+
+                <button
+                    className="logout-button"
+                    onClick={handleLogout} // Call logout function when button is clicked
+                >
                     Logout
                 </button>
             </div>
 
-            <ToastContainer />
-
-            {/* CSS Animations */}
-            <style jsx>{`
-                @keyframes fadeIn {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
-                }
-                @keyframes slideIn {
-                    from { transform: translateY(50px); opacity: 0; }
-                    to { transform: translateY(0); opacity: 1; }
-                }
-            `}</style>
+            <ToastContainer /> {/* Toast container to display notifications */}
         </div>
     );
 }

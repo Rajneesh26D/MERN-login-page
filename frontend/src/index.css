@@ -71,7 +71,7 @@ body{
 }
 
 button{
-  background-color: purple;
+  background-color: rgb(83, 176, 199);
   border: none;
   font-size: 20px;
   color: white;
@@ -101,7 +101,7 @@ button{
   top: 15px;
   cursor: pointer;
   font-size: 20px;
-  color: #c77bbf;
+  color: #7bbdc7;
 }
 
 .terms-container {
