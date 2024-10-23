@@ -193,7 +193,7 @@ function Signup() {
         width: '50vw'
       }}>
         <img src={login} alt="placeholder" style={{
-          width: "80%",
+          width: "78.7%",
           height: "80%",
           objectFit: "cover",
           objectPosition: "center",

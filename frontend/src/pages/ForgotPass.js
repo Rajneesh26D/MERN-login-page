@@ -92,7 +92,7 @@ function ForgotPass() {
       style={{
         position: "relative",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
         backgroundImage: `url(${melodyverse})`,
@@ -103,10 +103,14 @@ function ForgotPass() {
         overflow: "hidden",
       }}
     >
-      <div className="container">
+      <div className="container" style={{
+        width: '40%',
+        padding: '20px 0 20px 20px'
+      }}>
         <h1>Forgot Password?</h1>
-
-        <form onSubmit={handleForgotPass}>
+        <form onSubmit={handleForgotPass} style={{
+          width: '95%'
+        }}>
           <div>
             <label htmlFor="email">Email</label>
             <input
